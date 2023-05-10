@@ -19,5 +19,7 @@ from django.urls import path , include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('pages.urls')) # pages dizini altındaki urls, urllerin olduğu yere yönlendirme yapıyor
+    path('', include('pages.urls')), # pages dizini altındaki urls, urllerin olduğu yere yönlendirme yapıyor
+    path('tasks/', include('tasks.urls'))
 ]
+

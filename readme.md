@@ -71,3 +71,14 @@ ORM (Object-Relational Mapping), Django'da, nesnelerin veritabanı tablolarıyla
 #### 3.3 Servis Katmanı Oluşturma 
 Servis katmanı oluşturmanın temel amacı, iş mantığının, veri erişim işlemlerinden bağımsız olmasını sağlamaktır. Bu sayede, veri erişim katmanında yapılacak değişiklikler, servis katmanını etkilemez. Ayrıca, servis katmanı, veri erişim katmanı gibi doğrudan veritabanı sorguları kullanmaz, bunun yerine ORM aracılığıyla veri işlemlerini gerçekleştirir.            
 
+### 4.API Endpointleri         
+#### 4.1 CRUD Endpointleri
+``` /tasks/list ``` Yapılacak listesini getirir. ( GET )    
+``` /tasks/create ```
+
+#### 4.2 Login Endpointleri    
+
+### 4.3 CSRF Token   
+Django'da "CSRF token missing" hatası, Cross-Site Request Forgery (CSRF) saldırılarını engellemek için kullanılan CSRF korumasının devre dışı bırakılması veya eksik olması durumunda ortaya çıkar.      
+```  'django.middleware.csrf.CsrfViewMiddleware' ``` setting.py de bir middleware olan setcookie başlığında bulunan csrftokeni POST isteğinde bulunurken X-CSRFToken başlığını eklemeli ve tokeni girmeliyizdir. CSRFTokeni Postman de cookies keyi ekleyerek GET isteği atarak alabiliriz.     
+![ CRSF Token ](./images/token.jpg) 

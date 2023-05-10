@@ -11,4 +11,4 @@ class TaskAdmin(admin.ModelAdmin):
 
 @admin.register(ToDoStep)
 class TaskAdmin(admin.ModelAdmin):
-    list_display = ('todoList', 'deleteDate', 'isCompleted')
+    list_display = ('content', 'todoList', 'isCompleted')

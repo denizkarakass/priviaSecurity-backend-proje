@@ -17,11 +17,14 @@ class User(models.Model):
     
 class ToDoList(models.Model):
     id = models.AutoField(primary_key=True, verbose_name="ID")
-    name = models.CharField(max_length=200, unique=True, verbose_name="Yapılacaklar")
+    name = models.CharField(max_length=200, null=True, verbose_name="Yapılacaklar")
     creatingDate = models.DateField(auto_now_add=True)
     updateDate = models.DateField(auto_now=True)
     deleteDate = models.DateField(null=True, blank=True, auto_now_add=False)
     completedPercent = models.PositiveIntegerField(blank=True, null=True, verbose_name="Tamamlanma Yüzdesi")
+    
+    def __str__(self):
+        return self.name
     
     class Meta:
         verbose_name_plural = "To Do Listesi"
@@ -34,6 +37,7 @@ class ToDoStep(models.Model):
     deleteDate = models.DateField(auto_now_add=True, verbose_name="Silme Tarihi")
     content = models.TextField(verbose_name="İçerik")
     isCompleted = models.BooleanField(default=False, verbose_name="Bitirilme Durumu")
+     
 
     class Meta:
         verbose_name_plural = "To Do Adımı"

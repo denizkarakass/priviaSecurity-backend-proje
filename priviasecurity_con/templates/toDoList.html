@@ -1,0 +1,10 @@
+{% for item in toDoList %}
+  <h3>{{ item.name }}</h3>
+  <ul>
+    {% for step in toDoStep %}
+      {% if step.todoList == item %}
+        <li>{{ step.content }}</li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+{% endfor %}
